@@ -1,12 +1,12 @@
-import Board from "../src/Board";
+import Board from "../../src/domain/entity/Board";
 
 test("Deve criar um quadro", function () {
-	const board = new Board("A");
+	const board = new Board(1, "A");
 	expect(board.name).toBe("A");
 });
 
 test("Deve incluir as colunas no quadro", function () {
-	const board = new Board("A");
+	const board = new Board(1, "A");
 	board.addColumn("Todo", true);
 	board.addColumn("Doing", true);
 	board.addColumn("Done", false);
@@ -14,7 +14,7 @@ test("Deve incluir as colunas no quadro", function () {
 });
 
 test("Deve inserir cartões nas colunas do quadro", function () {
-	const board = new Board("A");
+	const board = new Board(1, "A");
 	board.addColumn("Todo", true);
 	board.addColumn("Doing", true);
 	board.addColumn("Done", false);
@@ -25,7 +25,7 @@ test("Deve inserir cartões nas colunas do quadro", function () {
 });
 
 test("Deve calcular a estimativa de uma coluna", function () {
-	const board = new Board("A");
+	const board = new Board(1, "A");
 	board.addColumn("Todo", true);
 	board.addColumn("Doing", true);
 	board.addColumn("Done", false);
@@ -36,7 +36,7 @@ test("Deve calcular a estimativa de uma coluna", function () {
 });
 
 test("Deve trocar um cartão de coluna", function () {
-	const board = new Board("A");
+	const board = new Board(1, "A");
 	board.addColumn("Todo", true);
 	board.addColumn("Doing", true);
 	board.addColumn("Done", false);
@@ -49,7 +49,7 @@ test("Deve trocar um cartão de coluna", function () {
 });
 
 test("Deve armazenar o tempo em cada coluna", function () {
-	const board = new Board("A");
+	const board = new Board(1, "A");
 	board.addColumn("Todo", true);
 	board.addColumn("Doing", true);
 	board.addColumn("Done", false);
